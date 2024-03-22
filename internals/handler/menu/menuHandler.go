@@ -8,6 +8,14 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
+// GetAllMenus godoc
+// @Summary Get all menus
+// @Description Get all menus
+// @Tags Menu
+// @Accept json
+// @Produce json
+// @Success 200 {array} model.Menu
+// @Router /api/menu [get]
 func GetAllMenus(c *fiber.Ctx) error {
 	db := database.DB
 	var menus []model.Menu
@@ -15,6 +23,15 @@ func GetAllMenus(c *fiber.Ctx) error {
 	return c.JSON(menus)
 }
 
+// CreateMenus godoc
+// @Summary Create a menu
+// @Description Create a menu
+// @Tags Menu
+// @Accept json
+// @Produce json
+// @Param menu body model.Menu true "Menu"
+// @Success 200 {object} model.Menu
+// @Router /api/menu [post]
 func CreateMenus(c *fiber.Ctx) error {
 	db := database.DB
 	menu := new(model.Menu)
