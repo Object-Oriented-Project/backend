@@ -1,14 +1,14 @@
 package userRoutes
 
 import (
+	userHandler "github.com/Object-Oriented-Project/backend/internals/handler/user"
 	"github.com/gofiber/fiber/v2"
-	// "github.com/Object-Oriented-Project/backend/internals/handler/user"
 )
 
 func SetupUserRoutes(route fiber.Router) {
-	// route.Get("/", user.GetAllUsers)
+	route.Get("/", userHandler.GetAllUsers)
 	// route.Get("/:id", user.GetUser)
-	// route.Post("/", user.CreateUser)
+	route.Post("/", userHandler.CreateUser)
 	// route.Put("/:id", user.UpdateUser)
 	// route.Delete("/:id", user.DeleteUser)
 	// route.Post("/register", user.Register)
