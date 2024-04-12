@@ -3,6 +3,7 @@ package router
 import (
 	menuRoutes "github.com/Object-Oriented-Project/backend/internals/routes/menu"
 	userRoutes "github.com/Object-Oriented-Project/backend/internals/routes/user"
+	authRoutes "github.com/Object-Oriented-Project/backend/internals/routes/auth"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 )
@@ -20,4 +21,6 @@ func SetupRoutes(app *fiber.App) {
 
 	menuRoutes.SetupMenuRoutes(api.Group("/menu"))
 	userRoutes.SetupUserRoutes(api.Group("/user"))
+	authRoutes.SetupAuthRoutes(api.Group("/auth"))
+
 }
