@@ -1,0 +1,2 @@
+INSERT INTO "users" ("username", "salt", "id", "created_at", "updated_at", "deleted_at", "password_hash") VALUES
+('admin',    '',    1,    '2024-04-12 10:45:51.454361+00',    '2024-04-12 10:45:51.454361+00',    NULL,    '$2a$10$ZRhKJ.AAwrVKVqo18bb6suovS1FpJHmy2JTVn.d162UzrDurkhPnK');
