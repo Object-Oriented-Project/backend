@@ -50,3 +50,54 @@ type Menu struct {
     PictureName     string
     ItemDescription string
 }
+
+type Order struct {
+    Data  string `json:"data"`
+    From  string `json:"from"`
+    To    string `json:"to"`
+    CustomerID uint `json:"customer_id"`
+    CustomerName string `json:"customer_name"`
+    OrderID uint `json:"order_id"`
+    OrderStatus OrderStatus `json:"order_status"`
+    OrderItems []OrderItem `json:"order_items"`
+}
+
+type OrderItem struct {
+    MenuID uint `json:"menu_id"`
+    Quantity int `json:"quantity"`
+    Size ItemSize `json:"size"`
+    Sweetness ItemSweetness `json:"sweetness"`
+    SpicyLevel ItemSpicyLevel `json:"spicy_level"`
+    Note string `json:"note"`
+}
+
+type OrderStatus string
+
+type ItemSize string
+
+type ItemSweetness string
+
+type ItemSpicyLevel string
+
+const (
+    OrderStatusOnGoing OrderStatus = "ONGOING"
+    OrderStatusFinished OrderStatus = "FINISHED"
+)
+
+const (
+    ItemSizeSmall ItemSize = "SMALL"
+    ItemSizeMedium ItemSize = "MEDIUM"
+    ItemSizeLarge ItemSize = "LARGE"
+)
+
+const (
+    ItemSweetnessNormal ItemSweetness = "NORMAL"
+    ItemSweetnessLess ItemSweetness = "LESS"
+    ItemSweetnessMore ItemSweetness = "MORE"
+)
+
+const (
+    ItemSpicyLevelNormal ItemSpicyLevel = "NORMAL"
+    ItemSpicyLevelLess ItemSpicyLevel = "LESS"
+    ItemSpicyLevelMore ItemSpicyLevel = "MORE"
+)
