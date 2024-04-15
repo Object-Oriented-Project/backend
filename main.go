@@ -21,6 +21,14 @@ import (
 
 func main() {
 	app := fiber.New()
+	//CORS
+	app.Use(func(c *fiber.Ctx) error {
+		c.Set("Access-Control-Allow-Origin", "*")
+		c.Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE")
+		c.Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
+		return c.Next()
+	})
+
 
 	database.Connect()
 
