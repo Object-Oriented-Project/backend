@@ -59,6 +59,7 @@ type Order struct {
     CustomerName string `json:"customer_name"`
     OrderID uint `json:"order_id"`
     OrderStatus OrderStatus `json:"order_status"`
+    OrderTable string `json:"order_table"`
     OrderItems []OrderItem `json:"order_items"`
 }
 
