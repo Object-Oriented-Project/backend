@@ -69,6 +69,7 @@ type OrderItem struct {
     Size ItemSize `json:"size"`
     Sweetness ItemSweetness `json:"sweetness"`
     SpicyLevel ItemSpicyLevel `json:"spicy_level"`
+    Keto bool `json:"keto"`
     Note string `json:"note"`
 }
 
