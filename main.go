@@ -29,6 +29,15 @@ func main() {
 		return c.Next()
 	})
 
+	// Add a route handler for OPTIONS requests
+app.Options("/*", func(c *fiber.Ctx) error {
+    c.Set("Access-Control-Allow-Origin", "*")
+    c.Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE")
+    c.Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
+    return c.SendStatus(fiber.StatusOK)
+})
+
+
 
 	database.Connect()
 
